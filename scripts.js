@@ -3,10 +3,16 @@ var hours = currenTime.getHours();
 var minutes = currenTime.getMinutes();
 var seconds = currenTime.getSeconds();
 
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
+function addleadingzero(num){
+    if(num<10)
+    return ( "0"+ num.toString());
+    else
+     return (num.toString());
+}
 
+document.getElementById("hours").innerHTML = addleadingzero(hours);
+document.getElementById("minutes").innerHTML = addleadingzero(minutes);
+document.getElementById("seconds").innerHTML = addleadingzero(seconds);
 var count = 0;
     window.setInterval(function(){
         document.getElementById("seconds").innerHTML++;
